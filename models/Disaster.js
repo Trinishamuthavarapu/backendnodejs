@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const disasterSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    location: { type: String, required: true },
-    severity: { type: String, enum: ['Low', 'Moderate', 'High'], required: true },
-    date: { type: Date, default: Date.now },
-    description: { type: String }
+const DisasterSchema = new mongoose.Schema({
+  type: String,
+  location: String,
+  description: String,
+  lat: Number,
+  lng: Number,
 });
 
-module.exports = mongoose.model('Disaster', disasterSchema);
+module.exports = mongoose.model("Disaster", DisasterSchema);
